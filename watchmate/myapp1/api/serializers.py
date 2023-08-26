@@ -5,4 +5,3 @@ class MovieSerializer(serializers.Serializer):
     name = serializers.CharField()
     description = serializers.CharField()
     active = serializers.BooleanField()
-    
