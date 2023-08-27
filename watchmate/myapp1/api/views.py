@@ -37,7 +37,10 @@ class MovieListAV(APIView):
     def post(self, request):
         serializer = MovieSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()   
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)   
 
 # ---------------------------------------------------------------------------------------------------------------------
 # by default: set for 'GET' request
